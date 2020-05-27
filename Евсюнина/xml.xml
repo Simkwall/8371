@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<! DOCTYPEbody [
+ <!ELEMENT body (cook,manager,cashier)>
+ <!ELEMENT cook (product_type, ingredients)
+ <!ELEMENT product_type (id_product, product_name, quantity_of_prepared_food, date_of_preparation)>
+ <!ELEMENT id_product (#PCDATA)>
+ <!ELEMENT product_name (#PCDATA)>
+ <!ELEMENT quantity_of_prepared_food (#PCDATA)>
+ <!ELEMENT date_of_preparation (#PCDATA)>
+ <!ELEMENT ingredients (the_name_of_the_ingredient,weight,price,shelf_life)>
+ <!ELEMENT the_name_of_the_ingredient (#PCDATA)>
+ <!ELEMENT weight (#PCDATA)>
+ <!ELEMENT price (#PCDATA)>
+ <!ELEMENT shelf_life (#PCDATA)>
+ <!ELEMENT menedger (product, price_list)>
+ <!ELEMENT product (id_product, product_name, price1, weight1,date_of_manufacture,category)> 
+ <!ELEMENT id_product (#PCDATA)>
+ <!ELEMENT product_name (#PCDATA)>
+ <!ELEMENT price1 (#PCDATA)>
+ <!ELEMENT weight1 (#PCDATA)>
+ <!ELEMENT date_of_manufacture (#PCDATA)>
+ <!ELEMENT category (#PCDATA)>
+ <!ELEMENT price_list (id_product, weight1, price1,being_in_demand,product_name,composition)> 
+ <!ELEMENT id_product (#PCDATA)>
+ <!ELEMENT weight1 (#PCDATA)>
+ <!ELEMENT price1 (#PCDATA)> 
+ <!ELEMENT being_in_demand (#PCDATA)> 
+ <!ELEMENT product_name (#PCDATA)>
+ <!ELEMENT composition (#PCDATA)>
+ <!ELEMENT cashier (implementation)>
+ <!ELEMENT implementation (id_sales, date_of_sale, product_name, quantity)> 
+ <!ELEMENT id_sales (#PCDATA)>
+ <!ELEMENT date_of_sale (#PCDATA)>
+ <!ELEMENT product_name (#PCDATA)>
+ <!ELEMENT quantity (#PCDATA)> 
+]>
+
+<body>
+ <cook>
+ <product_type>
+ <id_product>id43267</id_product>
+ <product_name>eclair</product_name>
+ <quantity_of_prepared_food>10</quantity_of_prepared_food>
+ <date_of_preparation>12.05/2021</date_of_preparation>
+ </product_type>
+ <ingredients>
+ <the_name_of_the_ingredient>flour</the_name_of_the_ingredient>
+ <weight>40</weight>
+ <price>30</price>
+ <shelf_life>22.03.2023</shelf_life>
+ </ingredients>
+ </cook>
+ <manager>
+ <product>
+ <id_product>id43267</id_product>
+ <product_name>eclair</product_name>
+ <price1>100</price1>
+ <weight1>40</weight1>
+ <date_of_manufacture>20.05.2021</date_of_manufacture>
+ <category>with_cream</category>
+ </product>
+ <price_list>
+ <id_product>id43267</id_product>
+ <weight1>40</weight1>
+ <price1>100</price1>
+ <being_in_demand>10</being_in_demand>
+ <product_name>eclair</product_name>
+ <composition>></composition>
+ </price_list>
+ </manager>
+ <cashier>
+ <implementation>
+ <id_sales>id8900</id_salesr>
+ <date_of_sale> 22.05.2021></date_of_sale>
+ <product_name>eclair</product_name> 
+ <quantity>20</quantity> 
+ </implementation>
+ </cashier>
+</body>
