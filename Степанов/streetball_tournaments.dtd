@@ -1,0 +1,42 @@
+<!DOCTYPE streetball_tournaments[
+        <!ELEMENT streetball_tournaments (tournaments, teams, coaches, players, games)>
+        <!ELEMENT tournaments (tournament)>
+        <!ELEMENT tournament (name, city, date, results)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT city (#PCDATA)>
+        <!ELEMENT date (#PCDATA)>
+        <!ELEMENT results (#PCDATA)>
+        <!ATTLIST tournament
+                id ID #REQUIRED>
+        <!ELEMENT teams (team)>
+        <!ELEMENT team (team_name, coach_id, tournament_id, requset_status)>
+        <!ELEMENT team_name (#PCDATA)>
+        <!ELEMENT coach_id (#PCDATA)>
+        <!ELEMENT tournament_id (#PCDATA)>
+        <!ELEMENT requset_status (#PCDATA)>
+        <!ATTLIST team
+                id ID #REQUIRED>
+        <!ELEMENT coaches (coach)>
+        <!ELEMENT coach (coach_full_name, email, phone_number)>
+        <!ELEMENT coach_full_name (#PCDATA)>
+        <!ELEMENT email (#PCDATA)>
+        <!ELEMENT phone_number (#PCDATA)>
+        <!ATTLIST coach
+                id ID #REQUIRED>
+        <!ELEMENT players (player)>
+        <!ELEMENT player (player_full_name, birth_date, rating)>
+        <!ELEMENT player_full_name (#PCDATA)>
+        <!ELEMENT birth_date (#PCDATA)>
+        <!ELEMENT rating (#PCDATA)>
+        <!ATTLIST player
+                id ID #REQUIRED>
+        <!ELEMENT games (game)>
+        <!ELEMENT game (tournament_id, team1_id, team2_id, score, game_number, court_number)>
+        <!ELEMENT team1_id (#PCDATA)>
+        <!ELEMENT team2_id (#PCDATA)>
+        <!ELEMENT score (#PCDATA)>
+        <!ELEMENT game_number (#PCDATA)>
+        <!ELEMENT court_number (#PCDATA)>
+        <!ATTLIST game
+                id ID #REQUIRED>
+]>

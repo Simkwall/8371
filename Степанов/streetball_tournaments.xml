@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<streetball_tournaments>
+
+    <tournaments>
+        <tournament id = "qwe">
+            <name>Orange Ball</name>
+            <city>Staint-Petersburg</city>
+            <date>12/12/2012</date>
+            <results>1st - Pobeda; 2nd - Beda; 3rd - Komanda</results>
+        </tournament>
+    </tournaments>
+
+    <teams>
+        <team id ="qwe1">
+            <team_name>Beda</team_name>
+            <coach_id>1</coach_id>
+            <tournament_id>1</tournament_id>
+            <requset_status>Accepted</requset_status>
+        </team>
+    </teams>
+
+    <coaches>
+        <coach id ="qwe12">
+            <coach_full_name>Ivanov Ivan Ivanovich</coach_full_name>
+            <email>III@gmail.com</email>
+            <phone_number>8-800-555-35-35</phone_number>
+        </coach>
+    </coaches>
+
+    <players>
+        <player id ="qwe123">
+            <player_full_name>Vladimirov Vladimir Vladimirovich</player_full_name>
+            <birth_date>12/12/2000</birth_date>
+            <rating>77</rating>
+        </player>
+    </players>
+
+    <games>
+        <game id ="qwe1234">
+            <tournament_id>1</tournament_id>
+            <team1_id>1</team1_id>
+            <team2_id>2</team2_id>
+            <score>12:23</score>
+            <game_number>1</game_number>
+            <court_number>1</court_number>
+        </game>
+    </games>
+</streetball_tournaments>

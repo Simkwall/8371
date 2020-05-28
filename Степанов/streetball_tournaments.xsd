@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="streetball_tournaments">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="tournaments" type="tournaments"/>
+                <xsd:element name="teams" type="teams"/>
+                <xsd:element name="coaches" type="coaches"/>
+                <xsd:element name="players" type="players"/>
+                <xsd:element name="games" type="games"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <xsd:complexType name="tournaments">
+        <xsd:sequence>
+            <xsd:element name="tournament" type="tournament"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="tournament">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="city" type="xsd:string"/>
+            <xsd:element name="date" type="xsd:string"/>
+            <xsd:element name="results" type="xsd:string"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:ID"></xsd:attribute>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="teams">
+        <xsd:sequence>
+            <xsd:element name="team" type="team"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="team">
+        <xsd:sequence>
+            <xsd:element name="team_name" type="xsd:string"/>
+            <xsd:element name="coach_id" type="xsd:string"/>
+            <xsd:element name="tournament_id" type="xsd:string"/>
+            <xsd:element name="requset_status" type="xsd:string"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:ID"></xsd:attribute>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="coaches">
+        <xsd:sequence>
+            <xsd:element name="coach" type="coach"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="coach">
+        <xsd:sequence>
+            <xsd:element name="coach_full_name" type="xsd:string"/>
+            <xsd:element name="email" type="xsd:string"/>
+            <xsd:element name="phone_number" type="xsd:string"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:ID"></xsd:attribute>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="players">
+        <xsd:sequence>
+            <xsd:element name="player" type="player"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="player">
+        <xsd:sequence>
+            <xsd:element name="player_full_name" type="xsd:string"/>
+            <xsd:element name="birth_date" type="xsd:string"/>
+            <xsd:element name="rating" type="xsd:string"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:ID"></xsd:attribute>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="games">
+        <xsd:sequence>
+            <xsd:element name="game" type="game"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="game">
+        <xsd:sequence>
+            <xsd:element name="tournament_id" type="xsd:string"/>
+            <xsd:element name="team1_id" type="xsd:string"/>
+            <xsd:element name="team2_id" type="xsd:string"/>
+            <xsd:element name="score" type="xsd:string"/>
+            <xsd:element name="game_number" type="xsd:string"/>
+            <xsd:element name="court_number" type="xsd:string"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:ID"></xsd:attribute>
+    </xsd:complexType>
+
+</xsd:schema>
