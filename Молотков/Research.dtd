@@ -1,0 +1,51 @@
+<!ELEMENT Research_Institute (Drug*,Drug_Type*,Storage,Supply*,Drug_Supply*,Drug_Delivery*,Order,Research*,Laboratory*)>
+<!ELEMENT Drug (Drug_ID,Type_ID_Ref,Stock_Quantity,Storage_ID_Ref,Drug_Name,Drug_Description)>
+<!ELEMENT Drug_Type (Type_ID,Type_Name)>
+<!ELEMENT Type_Name (#PCDATA)>
+<!ELEMENT Stock_Quantity (#PCDATA)>
+<!ELEMENT Drug_Name (#PCDATA)>
+<!ELEMENT Drug_Description (#PCDATA)>
+<!ELEMENT Storage (Storage_ID,Type_ID_Ref)>
+<!ELEMENT Supply (Supply_ID,Storage_ID_Ref,Receiving_Date)>
+<!ELEMENT Drug_Supply (Supply_ID_Ref,Type_ID_Ref,Drug_Quantity_Supply)>
+<!ELEMENT Drug_Quantity_Supply (#PCDATA)>
+<!ELEMENT Receiving_Date (#PCDATA)>
+<!ELEMENT Order (Order_ID,Research_ID_Ref,Issue_Date)>
+<!ELEMENT Drug_Delivery (Order_ID_Ref,Drug_ID_Ref,Drug_Quantity_Delivery)>
+<!ELEMENT Drug_Quantity_Delivery (#PCDATA)>
+<!ELEMENT Issue_Date (#PCDATA)>
+<!ELEMENT Research (Research_ID,Research_Name,Research_Description,Research_Date_Begin,Research_Date_End,Laboratory_ID_Ref,Research_Progress)>
+<!ELEMENT Research_Name (#PCDATA)>
+<!ELEMENT Research_Description (#PCDATA)>
+<!ELEMENT Research_Date_Begin (#PCDATA)>
+<!ELEMENT Research_Date_End (#PCDATA)>
+<!ELEMENT Research_Progress (#PCDATA)>
+<!ELEMENT Laboratory (Laboratory_ID)>
+<!ELEMENT Drug_ID EMPTY>
+<!ELEMENT Type_ID EMPTY>
+<!ELEMENT Storage_ID EMPTY>
+<!ELEMENT Supply_ID EMPTY>
+<!ELEMENT Order_ID EMPTY>
+<!ELEMENT Research_ID EMPTY>
+<!ELEMENT Laboratory_ID EMPTY>
+<!ELEMENT Drug_ID_Ref EMPTY>
+<!ELEMENT Type_ID_Ref EMPTY>
+<!ELEMENT Storage_ID_Ref EMPTY>
+<!ELEMENT Supply_ID_Ref EMPTY>
+<!ELEMENT Order_ID_Ref EMPTY>
+<!ELEMENT Research_ID_Ref EMPTY>
+<!ELEMENT Laboratory_ID_Ref EMPTY>
+<!ATTLIST Drug_ID id ID #REQUIRED>
+<!ATTLIST Type_ID id ID #REQUIRED>
+<!ATTLIST Storage_ID id ID #REQUIRED>
+<!ATTLIST Supply_ID id ID #REQUIRED>
+<!ATTLIST Order_ID id ID #REQUIRED>
+<!ATTLIST Research_ID id ID #REQUIRED>
+<!ATTLIST Laboratory_ID id ID #REQUIRED>
+<!ATTLIST Drug_ID_Ref idref IDREF #REQUIRED>
+<!ATTLIST Type_ID_Ref idref IDREF #REQUIRED>
+<!ATTLIST Storage_ID_Ref idref IDREF #REQUIRED>
+<!ATTLIST Supply_ID_Ref idref IDREF #REQUIRED>
+<!ATTLIST Order_ID_Ref idref IDREF #REQUIRED>
+<!ATTLIST Research_ID_Ref idref IDREF #REQUIRED>
+<!ATTLIST Laboratory_ID_Ref idref IDREF #REQUIRED>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='research.xsl'?>
+<!DOCTYPE Research_Institute SYSTEM "Research.dtd">
+<Research_Institute>
+	<Drug>
+		<Drug_ID id="drug1" />
+		<Type_ID_Ref idref="type1" />
+		<Stock_Quantity>500</Stock_Quantity>
+		<Storage_ID_Ref idref="storage1" />
+		<Drug_Name>Имя препарата 1</Drug_Name>
+		<Drug_Description>Описание препарата 1</Drug_Description>
+	</Drug>
+	<Drug>
+		<Drug_ID id="drug2" />
+		<Type_ID_Ref idref="type1" />
+		<Stock_Quantity>600</Stock_Quantity>
+		<Storage_ID_Ref idref="storage1" />
+		<Drug_Name>Имя препарата 2</Drug_Name>
+		<Drug_Description>Описание препарата 2</Drug_Description>
+	</Drug>
+	<Drug_Type>
+		<Type_ID id="type1" />
+		<Type_Name>Имя типа 1</Type_Name>
+	</Drug_Type>
+	<Storage>
+		<Storage_ID id="storage1" />
+		<Type_ID_Ref idref="type1" />
+	</Storage>
+	<Supply>
+		<Supply_ID id="supply1" />
+		<Storage_ID_Ref idref="storage1" />
+		<Receiving_Date>01/01/2000</Receiving_Date>
+	</Supply>
+	<Drug_Supply>
+		<Supply_ID_Ref idref="supply1" />
+		<Type_ID_Ref idref="type1" />
+		<Drug_Quantity_Supply>600</Drug_Quantity_Supply>
+	</Drug_Supply>
+	<Drug_Delivery>
+		<Order_ID_Ref idref="order1" />
+		<Drug_ID_Ref idref="drug1" />
+		<Drug_Quantity_Delivery>100</Drug_Quantity_Delivery>
+	</Drug_Delivery>
+	<Order>
+		<Order_ID id="order1" />
+		<Research_ID_Ref idref="research1" />
+		<Issue_Date>01/01/2000</Issue_Date>
+	</Order>
+	<Research>
+		<Research_ID id="research1" />
+		<Research_Name>Название работы 1</Research_Name>
+		<Research_Description>Описание работы 1</Research_Description>
+		<Research_Date_Begin>01/01/2000</Research_Date_Begin>
+		<Research_Date_End>01/01/2010</Research_Date_End>
+		<Laboratory_ID_Ref idref="laboratory1" />
+		<Research_Progress>0%</Research_Progress>
+	</Research>
+	<Laboratory>
+		<Laboratory_ID id="laboratory1" />
+	</Laboratory>
+</Research_Institute>
