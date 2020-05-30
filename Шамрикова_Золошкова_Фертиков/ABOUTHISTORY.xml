@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml-stylesheet type="text/xsl" href="file:///Users/hunt_roar/Desktop/sample.xsl"?> -->
+    <!DOCTYPE Historical_Portal [
+            <!ELEMENT Historical_Portal (Movie_Collection|Historical_Figure|Historical_Moment|Type_Of_Activity|Genre|Country|Users|Comments)*>
+                <!ELEMENT Movie_Collection (movie)*>
+                    <!ATTLIST movie moder CDATA #REQUIRED>
+                    <!ELEMENT movie (name|release|country|genre|duration|poster|trailer|description|comment|person|moment|mistake)*>
+                        <!ELEMENT name (#PCDATA)>
+                        <!ELEMENT release (#PCDATA)>
+                        <!ELEMENT country (#PCDATA)>
+						<!ELEMENT role (#PCDATA)>
+                        <!ELEMENT genre (#PCDATA)>
+                        <!ELEMENT duration (#PCDATA)>
+                        <!ELEMENT poster (#PCDATA)>
+                        <!ELEMENT trailer (#PCDATA)>
+                        <!ELEMENT description (#PCDATA)>
+                        <!ELEMENT comment (#PCDATA)>
+                        <!ELEMENT person (#PCDATA)>
+                        <!ELEMENT moment (#PCDATA)>
+                        <!ELEMENT mistake (#PCDATA)>
+                <!ELEMENT Historical_Figure (person)*>
+                    <!ATTLIST person id CDATA #REQUIRED>
+                    <!ELEMENT person (name|activity|birth|death|homeland|moment)*>
+                        <!ELEMENT name (#PCDATA)>
+                        <!ELEMENT activity (#PCDATA)>
+                        <!ELEMENT birth (day|month|year)*>
+                            <!ELEMENT day (#PCDATA)>
+                            <!ELEMENT month (#PCDATA)>
+                            <!ELEMENT year (#PCDATA)>
+                        <!ELEMENT death (day|month|year)*>
+                            <!ELEMENT day (#PCDATA)>
+                            <!ELEMENT month (#PCDATA)>
+                            <!ELEMENT year (#PCDATA)>
+                        <!ELEMENT homeland (#PCDATA)>
+                        <!ELEMENT moment (#PCDATA)>
+                <!ELEMENT Historical_Moment (moment)*>
+                        <!ATTLIST moment id CDATA #REQUIRED>
+                        <!ELEMENT moment (name|date|description|person|country)*>
+                        <!ELEMENT name (#PCDATA)>
+                        <!ELEMENT date (day|month|year)*>
+                            <!ELEMENT day (#PCDATA)>
+                            <!ELEMENT month (#PCDATA)>
+                            <!ELEMENT year (#PCDATA)>
+                        <!ELEMENT description (#PCDATA)>
+                        <!ELEMENT person (#PCDATA)>
+                        <!ELEMENT country (#PCDATA)>
+                <!ELEMENT Type_Of_Activity (activity)*>
+                        <!ATTLIST activity id CDATA #REQUIRED>
+                        <!ELEMENT activity (#PCDATA)>
+                <!ELEMENT Genre (genre)*>
+                        <!ATTLIST genre id CDATA #REQUIRED>
+                        <!ELEMENT genre (#PCDATA)>
+                <!ELEMENT Country (country)*>
+                        <!ATTLIST country id CDATA #REQUIRED>
+                        <!ELEMENT country (#PCDATA)>
+				<!ELEMENT Roles (role)>
+						<!ATTLIST role id CDATA #REQUIRED>
+                        <!ELEMENT role (#PCDATA)>
+                <!ELEMENT Users (user)*>
+                        <!ATTLIST user role CDATA #REQUIRED>
+                        <!ATTLIST user id CDATA #REQUIRED>
+                        <!ELEMENT user (name|password)*>
+                            <!ELEMENT name (#PCDATA)>
+                            <!ELEMENT password (#PCDATA)>
+                <!ELEMENT Comments (comment)*>
+                    <!ATTLIST comment id CDATA #REQUIRED>
+                    <!ELEMENT comment (rate|author|text|date)*>
+                        <!ELEMENT rate (#PCDATA)>
+                        <!ELEMENT author (#PCDATA)>
+                        <!ELEMENT text (#PCDATA)>
+                        <!ELEMENT date (day|month|year)*>
+                            <!ELEMENT day (#PCDATA)>
+                            <!ELEMENT month (#PCDATA)>
+                            <!ELEMENT year (#PCDATA)>]>    
+    <Historical_Portal>       
+        <Movie_Collection>   
+            <movie id ="mov1" moder="moderator1">
+                <name>Линкольн</name>
+                <release>2012</release>   
+                <country>usa</country>
+                <genre>g4</genre>
+                <genre>g3</genre>
+                <duration>150 минут</duration>
+                <poster>president.jpg</poster>
+                <trailer>ссылка</trailer>
+                <description>1865 год. Шестнадцатый президент США Авраам Линкольн находится на пике популярности.</description>
+                <comment>comment1</comment>
+                <person>per1</person>
+                <moment>m1</moment>
+                <mistake> В фильме двое конгрессменов из Коннектикута голосуют против поправки об отмене рабства.
+                            Однако, как заявляет Кортни, все четверо конгрессменов от Коннектикута проголосовали за принятие 13-й поправки.</mistake>
+            </movie> 
+            <movie id ="mov2"  moder="moderator2">
+                <name>Гагарин. Первый в космосе</name>
+                <release>2013</release>   
+                <country>rus</country>
+                <genre>g4</genre>
+                <genre>g3</genre>
+                <duration>150 минут</duration>
+                <poster>space.jpg</poster>
+                <trailer>ссылканатрейлер</trailer>
+                <description>Фильм посвящен первым шагам человечества на пути освоения космоса и 
+                                    непосредственно судьбе первого космонавта Ю. А. Гагарина.</description>
+                <comment>comment2</comment>
+                <person>per2</person>
+                <moment>m2</moment>
+                <mistake>не найдено</mistake>
+            </movie> 
+            <movie id ="mov3"  moder="moderator1">
+                <name>Власть</name>
+                <release>2018</release>   
+                <country>usa</country>
+                <genre>g4</genre>
+                <genre>g6</genre>
+                <duration>132 минуты</duration>
+                <poster>vice.jpg</poster>
+                <trailer>ссылка</trailer>
+                <description>Уникальный дар убеждения, незаурядный ум и доступ на самые высокие уровни власти позволили ему стать кукловодом среди сильных мира сего.
+                 Оставаясь теневым игроком, он навсегда изменил ход истории…</description>
+                <comment>comment4</comment>
+                <person>per3</person>
+                <moment>m4</moment>
+                <mistake>не найдено</mistake> 
+            </movie> 
+        </Movie_Collection> 
+            <Historical_Figure>
+                <person id = "per1">
+                    <name>Авраам Линкольн</name>
+                    <activity>actv1</activity>
+                    <birth>
+                        <day>12</day>
+                        <month>02</month>
+                        <year>1809</year>
+                    </birth>
+                    <death>
+                        <day>15</day>
+                        <month>04</month>
+                        <year>1865</year>
+                    </death>
+                    <homeland>usa</homeland>
+                    <moment>m1</moment>
+                    <moment>m3</moment>
+                </person>
+                <person id = "per2">
+                    <name>Юрий Алексеевич Гагарин</name>
+                    <activity>actv3</activity>
+                    <birth>
+                        <day>9</day>
+                        <month>03</month>
+                        <year>1934</year>
+                    </birth>
+                    <death>
+                        <day>27</day>
+                        <month>03</month>
+                        <year>1968</year>
+                    </death>
+                    <homeland>rus</homeland>
+                    <moment>m2</moment>
+                </person>
+                <person id = "per3">
+                    <name>Ричард Брюс (Дик) Чейни</name>
+                    <activity>actv4</activity>
+                    <birth>
+                        <day>30</day>
+                        <month>01</month> 
+                        <year>1941</year>
+                    </birth>
+                    <death>
+                        <day></day>
+                        <month></month>
+                        <year></year>
+                    </death>
+                    <homeland>usa</homeland>
+                    <moment>m4</moment>
+                </person>
+            </Historical_Figure>
+            <Historical_Moment>
+                <moment id="m1">
+                    <name>Убийство Линкольна</name>
+                    <date>
+                        <day>15</day>
+                        <month>04</month>
+                        <year>1865</year>
+                    </date>
+                    <description>Совершено в Вашингтоне на спектакле.
+                                Линкольн был смертельно ранен выстрелом в голову из пистолета сторонником южан.</description>
+                    <person>per1</person>
+                    <country>usa</country>
+                </moment>
+                <moment id="m2">
+                    <name>Первый полет в космос</name>
+                    <date>
+                        <day>12</day>
+                        <month>04</month>
+                        <year>1961</year>
+                    </date>
+                    <description>Первый полет человека в космос</description>
+                    <person>per2</person>
+                    <country>rus</country>
+                </moment>
+                <moment id="m3">
+                    <name>Отмена рабства в США</name>
+                    <date>
+                        <day></day>
+                        <month>12</month>
+                        <year>1865</year>
+                    </date>
+                    <description>Рабство было отменено после завершения Гражданской войны 1861—1865 годов и 
+                                принятия Тринадцатой поправки к конституции США в декабре 1865 года.</description>
+                    <person>per1</person>
+                    <country>usa</country>
+                </moment>
+                <moment id="m4">
+                    <name>Иракская война</name>
+                    <date>
+                        <day>20</day>
+                        <month>04</month>
+                        <year>2003</year>
+                    </date>
+                    <description>Военный конфликт, начавшийся со вторжения сил США 
+                    и их союзников в Ирак с целью свержения власти Саддама Хусейна</description>
+                    <person>per3</person>
+                    <country>usa</country>
+                </moment>
+            </Historical_Moment>
+            <Type_Of_Activity>
+                <activity id="actv1">президент</activity> 
+                <activity id="actv2">императрица</activity>
+                <activity id="actv3">космонавт</activity> 
+                <activity id="actv4">вице-президент</activity> 
+            </Type_Of_Activity>
+            <Genre>
+                <genre id = "g1">приключения</genre>
+                <genre id = "g2">боевик</genre>
+                <genre id = "g3">драма</genre>
+                <genre id = "g4">биографический фильм</genre>
+                <genre id = "g5">военный</genre>
+                <genre id = "g6">о политике</genre>
+                <genre id = "g7">документальный</genre>
+            </Genre>
+            <Country>
+                <country id = "rus">Россия </country>
+                <country id = "usa">США </country>
+                <country id = "ger">Германия </country>
+                <country id = "frn">Франция </country>
+                <country id = "rusz">Русское царство </country>
+            </Country>
+			<Roles>
+				<role id = "mod" rule = "Добавление/Редактирование/Удаление фильмов; Удаление отзывов"></role>
+				<role id = "user" rule = "Просмотр списка фильмов, Просмотр и написание комментариев"></role>
+			</Roles>
+            <Users>
+                <user role="mod" id="moderator1"> 
+                    <name>Дональд</name>
+                    <password>passWORD111</password>
+                </user>
+                <user role="mod" id="moderator2"> 
+                    <name>Рональд</name>
+                    <password>1ImAKing1</password>
+                </user>
+                <user role="user" id="hunt_roar">
+                    <name>Анна Евгеньевна</name>
+                    <password>Kventin273</password>
+                </user>
+                <user role="user" id="ItsNotMary"> 
+                    <name>Мария</name>
+                    <password>OMGparol111</password>
+                </user>
+                <user role="user" id="PetertheGreat">
+                    <name>Петруша</name>
+                    <password>Saint-P1703</password>
+                </user>
+            </Users>
+            <Comments>
+                <comment id="comment1"> 
+                    <rate>10</rate>
+                    <author>Анна Евгеньевна</author>
+                    <text>Очень круто раскрыли персонажей</text>
+                    <date>
+                        <day>23</day>
+                        <month>12</month>
+                        <year>2019</year>
+                    </date>
+                </comment>
+                <comment id="comment2">
+                    <rate>1</rate>
+                    <author>Мария</author>
+                    <text>Отвратительно. Много несоответсвий</text>
+                    <date>
+                        <day>09</day>
+                        <month>03</month>
+                        <year>2020</year>
+                    </date>
+                </comment>
+                <comment id="comment3">
+                    <rate>10</rate>
+                    <author>Петруша</author>
+                    <text>Потрясающее погружение в эпоху!</text>
+                    <date>
+                        <day>12</day>
+                        <month>03</month>
+                        <year>2020</year>
+                    </date>
+                </comment>
+                  <comment id="comment4">
+                    <rate>10</rate>
+                    <author>Анна Евгеньевна</author>
+                    <text>главный герой-мерзавец</text>
+                    <date>
+                        <day>11</day>
+                        <month>04</month>
+                        <year>2019</year>
+                    </date>
+                </comment>
+            </Comments>
+    </Historical_Portal>
+
+
+
