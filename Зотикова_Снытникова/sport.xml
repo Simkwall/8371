@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SportClub [
+        <!ELEMENT SportClub (GeneralManager, SalesManager, Account, Reception, Clients, TypesOfTraining, TypesOfPass,
+                Pass, Timetable, Promotions, Payments, Coaches, Record )>
+        <!ELEMENT GeneralManager (LoginGM, PasswordGM)>
+        <!ELEMENT LoginGM (#PCDATA)>
+        <!ELEMENT PasswordGM (#PCDATA)>
+
+        <!ELEMENT SalesManager (LoginSM, PasswordSM)>
+        <!ELEMENT LoginSM (#PCDATA)>
+        <!ELEMENT PasswordSM (#PCDATA)>
+
+        <!ELEMENT Account (LoginAcc, PasswordAcc)>
+        <!ELEMENT LoginAcc (#PCDATA)>
+        <!ELEMENT PasswordAcc (#PCDATA)>
+
+        <!ELEMENT Reception (LoginRec, PasswordRec)>
+        <!ELEMENT LoginRec (#PCDATA)>
+        <!ELEMENT PasswordRec (#PCDATA)>
+
+        <!ELEMENT Clients (Client*)>
+        <!ELEMENT Client (ClientCode, FullName, ClientPassCode, PhoneNumber)>
+        <!ELEMENT ClientCode (#PCDATA)>
+        <!ELEMENT FullName (#PCDATA)>
+        <!ELEMENT ClientPassCode (#PCDATA)>
+        <!ELEMENT PhoneNumber (#PCDATA)>
+        <!ATTLIST ClientCode Ccode ID #REQUIRED>
+        <!ATTLIST ClientPassCode passCode IDREF #REQUIRED>
+
+        <!ELEMENT TypesOfTraining (TypeOfTraining+)>
+        <!ELEMENT TypeOfTraining (#PCDATA)>
+        <!ATTLIST TypeOfTraining IDTraining ID #REQUIRED>
+        <!ATTLIST TypeOfTraining name CDATA #REQUIRED>
+
+        <!ELEMENT TypesOfPass (TypeOfPass*)>
+        <!ELEMENT TypeOfPass (CodeOfType*, Naming+, Price, Validity, VisitTime, TypesOfActivity+, StatusOfType)>
+        <!ELEMENT CodeOfType (#PCDATA)>
+        <!ELEMENT Naming (#PCDATA)>
+        <!ELEMENT Price (#PCDATA)>
+        <!ELEMENT Validity (#PCDATA)>
+        <!ELEMENT VisitTime (#PCDATA)>
+        <!ELEMENT TypesOfActivity (#PCDATA)>
+        <!ELEMENT StatusOfType (#PCDATA)>
+        <!ATTLIST StatusOfType statusOftype (true | false) "false" >
+        <!ATTLIST CodeOfType typeID ID #REQUIRED>
+        <!ATTLIST TypesOfActivity activ IDREFS #REQUIRED>
+
+        <!ELEMENT Pass (PassCode*,PassType, Start, Finish, SManeger, Status, TypeofPayment, PaymentStatus, LinkToPromotions)>
+        <!ELEMENT PassType (#PCDATA)>
+        <!ELEMENT Start (#PCDATA)>
+        <!ELEMENT Finish (#PCDATA)>
+        <!ELEMENT PassCode (#PCDATA)>
+        <!ELEMENT SManeger (#PCDATA)>
+        <!ELEMENT Status (#PCDATA)>
+        <!ELEMENT TypeofPayment (#PCDATA)>
+        <!ELEMENT PaymentStatus (#PCDATA)>
+        <!ELEMENT LinkToPromotions (#PCDATA)>
+        <!ATTLIST Status status (true | false) "false" >
+        <!ATTLIST PaymentStatus payment_status (true | false) "false" >
+        <!ATTLIST PassCode id ID #REQUIRED>
+
+        <!ELEMENT Timetable (TimetableCells*)>
+        <!ELEMENT TimetableCells (ActivityCode, Weekday+, Date+, StartTime+, FinishTime+, Format, NumberOfSeats?, TypeOfActivity,Instructor?, Recording?)>
+        <!ELEMENT ActivityCode (#PCDATA)>
+        <!ELEMENT Weekday (#PCDATA)>
+        <!ELEMENT Date (#PCDATA)>
+        <!ELEMENT StartTime (#PCDATA)>
+        <!ELEMENT FinishTime (#PCDATA)>
+        <!ELEMENT Format (#PCDATA)>
+        <!ELEMENT NumberOfSeats (#PCDATA)>
+        <!ELEMENT TypeOfActivity (#PCDATA)>
+        <!ELEMENT Instructor (#PCDATA)>
+        <!ELEMENT Recording (#PCDATA)>
+        <!ATTLIST Format format (general | group) "general" >
+        <!ATTLIST ActivityCode activityID ID #REQUIRED>
+        <!ATTLIST TypeOfActivity activityID IDREF #REQUIRED>
+        <!ATTLIST Instructor InstructorID IDREF #REQUIRED>
+
+        <!ELEMENT Promotions (CodeOfThePassType, Expiry, DiscountedPrice)>
+        <!ELEMENT CodeOfThePassType (#PCDATA)>
+        <!ELEMENT Expiry (#PCDATA)>
+        <!ELEMENT DiscountedPrice (#PCDATA)>
+        <!ATTLIST CodeOfThePassType id ID #REQUIRED>
+
+        <!ELEMENT Payments (Paying*)>
+        <!ELEMENT Paying (CodeOfPass, ThePaymentCalendar, PaymentAmount)>
+        <!ELEMENT CodeOfPass (#PCDATA)>
+        <!ELEMENT ThePaymentCalendar (#PCDATA)>
+        <!ELEMENT PaymentAmount (#PCDATA)>
+        <!ATTLIST CodeOfPass codePass IDREF #REQUIRED>
+
+        <!ELEMENT Coaches (Coach*)>
+        <!ELEMENT Coach (CoachCode, Name, Number, PassportData, Qualification, Sex, Photo)>
+        <!ELEMENT CoachCode (#PCDATA)>
+        <!ELEMENT Name (#PCDATA)>
+        <!ELEMENT Number (#PCDATA)>
+        <!ELEMENT PassportData (#PCDATA)>
+        <!ELEMENT Qualification (#PCDATA)>
+        <!ELEMENT Sex (#PCDATA)>
+        <!ELEMENT Photo (#PCDATA)>
+        <!ATTLIST CoachCode coachID ID #REQUIRED>
+       <!-- <!ENTITY Photo SYSTEM http://....> -->
+
+        <!ELEMENT Record (Pass_code, CodeOfActivity)>
+        <!ELEMENT Pass_code (#PCDATA)>
+        <!ELEMENT CodeOfActivity (#PCDATA)>
+        <!ATTLIST Pass_code pass_code IDREF #REQUIRED>
+        <!ATTLIST CodeOfActivity ActivCode IDREF #REQUIRED>
+
+        ]>
+
+<SportClub>
+    <GeneralManager>
+        <LoginGM></LoginGM>
+        <PasswordGM></PasswordGM>
+    </GeneralManager>
+
+    <SalesManager>
+        <LoginSM></LoginSM>
+        <PasswordSM></PasswordSM>
+    </SalesManager>
+
+    <Account>
+        <LoginAcc></LoginAcc>
+        <PasswordAcc></PasswordAcc>
+    </Account>
+
+    <Reception>
+        <LoginRec></LoginRec>
+        <PasswordRec></PasswordRec>
+    </Reception>
+
+    <Clients>
+        <Client>
+            <ClientCode Ccode="id-01"/>
+            <FullName></FullName>
+            <ClientPassCode passCode="id-100"/>
+            <PhoneNumber></PhoneNumber>
+        </Client>
+    </Clients>
+
+    <TypesOfTraining>
+        <TypeOfTraining IDTraining="id-1" name="yoga"/>
+        <TypeOfTraining IDTraining="id-2" name="fitness"/>
+        <TypeOfTraining IDTraining="id-3" name="stretching"/>
+    </TypesOfTraining>
+
+    <TypesOfPass>
+        <TypeOfPass>
+            <CodeOfType typeID="typeID-15233"/>
+            <Naming> naming </Naming>
+            <Price> 1000 </Price>
+            <Validity> 12 </Validity>
+            <VisitTime> morning </VisitTime>
+            <TypesOfActivity activ="id-1 id-2"> </TypesOfActivity>
+            <StatusOfType statusOftype="true"> true </StatusOfType>
+        </TypeOfPass>
+    </TypesOfPass>
+
+    <Pass>
+        <PassCode id="id-100"/>
+        <PassType>type</PassType>
+        <Start>1</Start>
+        <Finish>12</Finish>
+        <SManeger>man</SManeger>
+        <Status status="true">status</Status>
+        <TypeofPayment>installment</TypeofPayment>
+        <PaymentStatus payment_status="false"> payment status</PaymentStatus>
+        <LinkToPromotions>L000</LinkToPromotions>
+    </Pass>
+
+    <Timetable>
+        <TimetableCells>
+            <ActivityCode activityID="id-001"></ActivityCode>
+            <Weekday>weekday</Weekday>
+            <Date>date</Date>
+            <StartTime>start</StartTime>
+            <FinishTime>finish</FinishTime>
+            <Format format="group">format</Format>
+            <NumberOfSeats>0</NumberOfSeats>
+            <TypeOfActivity activityID="id-1"> yoga </TypeOfActivity>
+            <Instructor InstructorID="id-15"> B </Instructor>
+        </TimetableCells>
+    </Timetable>
+
+    <Promotions>
+        <CodeOfThePassType id="id-200"/>
+        <Expiry> 1 month </Expiry>
+        <DiscountedPrice> 4000 </DiscountedPrice>
+    </Promotions>
+
+    <Payments>
+        <Paying>
+            <CodeOfPass codePass="id-100"/>
+            <ThePaymentCalendar> 21.09.2020 </ThePaymentCalendar>
+            <PaymentAmount>3000</PaymentAmount>
+        </Paying>
+    </Payments>
+
+    <Coaches>
+        <Coach>
+            <CoachCode coachID="id-15"> </CoachCode>
+            <Name> B </Name>
+            <Number> 89120000000 </Number>
+            <PassportData> ----- </PassportData>
+            <Qualification> yoga </Qualification>
+            <Sex> W </Sex>
+            <Photo></Photo>
+        </Coach>
+    </Coaches>
+
+    <Record>
+        <Pass_code pass_code="id-100"></Pass_code>
+        <CodeOfActivity ActivCode="id-001"></CodeOfActivity>
+    </Record>
+
+</SportClub>

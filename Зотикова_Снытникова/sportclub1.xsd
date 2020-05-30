@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SportClub">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="GeneralManager">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LoginGM" />
+              <xs:element name="PasswordGM" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SalesManager">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LoginSM" />
+              <xs:element name="PasswordSM" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Account">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LoginAcc" />
+              <xs:element name="PasswordAcc" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Reception">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LoginRec" />
+              <xs:element name="PasswordRec" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Clients">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Client">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ClientCode">
+                      <xs:complexType>
+                        <xs:attribute name="Ccode" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FullName" />
+                    <xs:element name="ClientPassCode">
+                      <xs:complexType>
+                        <xs:attribute name="passCode" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="PhoneNumber" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TypesOfTraining">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="TypeOfTraining">
+                <xs:complexType>
+                  <xs:attribute name="IDTraining" type="xs:string" use="required" />
+                  <xs:attribute name="name" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TypesOfPass">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TypeOfPass">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="CodeOfType">
+                      <xs:complexType>
+                        <xs:attribute name="typeID" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Naming" type="xs:string" />
+                    <xs:element name="Price" type="xs:unsignedShort" />
+                    <xs:element name="Validity" type="xs:unsignedByte" />
+                    <xs:element name="VisitTime" type="xs:string" />
+                    <xs:element name="TypesOfActivity">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="activ" type="xs:string" use="required" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="StatusOfType">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:boolean">
+                            <xs:attribute name="statusOftype" type="xs:boolean" use="required" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Pass">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PassCode">
+                <xs:complexType>
+                  <xs:attribute name="id" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PassType" type="xs:string" />
+              <xs:element name="Start" type="xs:unsignedByte" />
+              <xs:element name="Finish" type="xs:unsignedByte" />
+              <xs:element name="SManeger" type="xs:string" />
+              <xs:element name="Status">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="status" type="xs:boolean" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TypeofPayment" type="xs:string" />
+              <xs:element name="PaymentStatus">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="payment_status" type="xs:boolean" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="LinkToPromotions" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Timetable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TimetableCells">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ActivityCode">
+                      <xs:complexType>
+                        <xs:attribute name="activityID" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Weekday" type="xs:string" />
+                    <xs:element name="Date" type="xs:string" />
+                    <xs:element name="StartTime" type="xs:string" />
+                    <xs:element name="FinishTime" type="xs:string" />
+                    <xs:element name="Format">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="format" type="xs:string" use="required" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="NumberOfSeats" type="xs:unsignedByte" />
+                    <xs:element name="TypeOfActivity">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="activityID" type="xs:string" use="required" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Instructor">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="InstructorID" type="xs:string" use="required" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Promotions">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodeOfThePassType">
+                <xs:complexType>
+                  <xs:attribute name="id" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Expiry" type="xs:string" />
+              <xs:element name="DiscountedPrice" type="xs:unsignedShort" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Payments">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Paying">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="CodeOfPass">
+                      <xs:complexType>
+                        <xs:attribute name="codePass" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ThePaymentCalendar" type="xs:string" />
+                    <xs:element name="PaymentAmount" type="xs:unsignedShort" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Coaches">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Coach">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="CoachCode">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="coachID" type="xs:string" use="required" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Name" type="xs:string" />
+                    <xs:element name="Number" type="xs:unsignedLong" />
+                    <xs:element name="PassportData" type="xs:string" />
+                    <xs:element name="Qualification" type="xs:string" />
+                    <xs:element name="Sex" type="xs:string" />
+                    <xs:element name="Photo" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Record">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Pass_code">
+                <xs:complexType>
+                  <xs:attribute name="pass_code" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="CodeOfActivity">
+                <xs:complexType>
+                  <xs:attribute name="ActivCode" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
