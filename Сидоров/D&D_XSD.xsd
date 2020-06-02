@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DnD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Игроки">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Игрок">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Имя" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Игрока" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Персонажи">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ЛистПерсонажа">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Имя_Персонажа" />
+                    <xs:element name="Уровень" />
+                    <xs:element name="Опыт" />
+                    <xs:element name="КД" />
+                    <xs:element name="Биография" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Персонажа" type="xs:string" use="required" />
+                  <xs:attribute name="ID_Расы" type="xs:string" use="required" />
+                  <xs:attribute name="ID_Подрасы" type="xs:string" use="required" />
+                  <xs:attribute name="ID_Класса" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Справочник_Характеристик">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Название_Характеристики">
+                <xs:complexType>
+                  <xs:attribute name="ID_Характеристики" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Характеристики_Персонажей">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Характеристика">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Значение" />
+                    <xs:element name="Модификатор" />
+                    <xs:element name="Спасбросок" />
+                    <xs:element name="Тренировка" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Персонажа" type="xs:string" use="required" />
+                  <xs:attribute name="ID_Характеристики" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Справочник_Навыков">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Название_Навыка">
+                <xs:complexType>
+                  <xs:attribute name="ID_Навыка" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Навыки_Персонажей">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Навык">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Значение" />
+                    <xs:element name="Характеристика" />
+                    <xs:element name="Тренировка" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Персонажа" type="xs:string" use="required" />
+                  <xs:attribute name="ID_Навыка" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Хиты_Персонажей">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Хиты">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Максимум" />
+                    <xs:element name="Текущие" />
+                    <xs:element name="Временные" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Персонажа" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Расы">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Раса">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Название" />
+                    <xs:element name="Описание" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Расы" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Расовые_Бонусы">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Расовый_бонус">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Характеристика" />
+                    <xs:element name="Бонус" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Расы" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Подрасы">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Подраса">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Название" />
+                    <xs:element name="Описание" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Подрасы" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Подрасовые_Бонусы">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Подрасовый_бонус">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Характеристика" />
+                    <xs:element name="Бонус" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Подрасы" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Кошельки">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Кошелек">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Платиновые" />
+                    <xs:element name="Золотые" />
+                    <xs:element name="Серебряные" />
+                    <xs:element name="Медные" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Персонажа" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Классы">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Класс">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Название" />
+                    <xs:element name="Описание" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Класса" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Классовые_Навыки">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Навык">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Название" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Класса" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Классовые_Спасброски">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Спасбросок">
+                <xs:complexType>
+                  <xs:attribute name="ID_Класса" type="xs:string" use="required" />
+                  <xs:attribute name="ID_Характеристики" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Инвентари">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Инвентарь">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ID_Предмета" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Персонажа" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Справочник_Предметов">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Предмет">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Название" />
+                    <xs:element name="Описание" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Предмета" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Бестиарий">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Существо">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Название" />
+                    <xs:element name="Хиты" />
+                    <xs:element name="Опасность" />
+                    <xs:element name="Описание" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Существа" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Характеристики_Существ">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Характеристика">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Значение" />
+                    <xs:element name="Модификатор" />
+                    <xs:element name="Спасбросок" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Существа" type="xs:string" use="required" />
+                  <xs:attribute name="ID_Характеристики" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Навыки_Существ">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Навык">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Название" />
+                    <xs:element name="Значение" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Существа" type="xs:string" use="required" />
+                  <xs:attribute name="ID_Навыка" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Сцены">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Сцена">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Описание" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Сцены" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Предметы_в_Сценах">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Предмет_в_Сцене">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ID_Предмета" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Сцены" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Персонажи_в_Сценах">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Персонаж_в_Сцене">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ID_Персонажа" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Сцены" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Существа_в_Сценах">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Существо_в_Сцене">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ID_Существа" />
+                  </xs:sequence>
+                  <xs:attribute name="ID_Сцены" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

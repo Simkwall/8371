@@ -1,0 +1,194 @@
+<?xml encoding="utf-8"?>
+
+<!DOCTYPE D&D[
+    <!ELEMENT D&D (Игроки, Персонажи, Характеристики_Персонажей, Навыки_персонажей, Хиты_Персонажей, Расы, Расовые_Бонусы, Подрасы, Подрасовые_Бонусы, Кошельки, Классы, Классовые_Навыки, Классовые_Спасброски, Инвентари, Справочник_Предметов, Бестиарий, Характеристики_Существ, Навыки_Существ, Сцены, Предметы_в_Сценах, Персонажи_в_Сценах, Существа_в_Сценах)>
+    
+    <!ELEMENT Игроки (Игрок*)>
+    <!ELEMENT Игрок (Имя)>
+    <!ELEMENT Имя (#PCDATA)>
+    <!ATTLIST Игрок 
+        ID_Игрока ID #REQUIRED> 
+    
+    <!ELEMENT Персонажи (ЛистыПерсонажа*)>
+    <!ELEMENT ЛистПерсонажа (Имя_Персонажа, Уровень, Опыт, КД, Биография)>
+    <!ELEMENT Имя_Персонажа PCDATA>
+    <!ELEMENT Уровень (#PCDATA)>
+    <!ELEMENT Опыт (#PCDATA)>
+    <!ELEMENT КД (#PCDATA)>
+    <!ELEMENT Биография (#PCDATA)>
+    <!ATTLIST ЛистПерсонажа
+        ID_Персонажа ID #REQUIRED
+        ID_Игрока IDREF #REQUIRED
+        ID_Расы IDREF #REQUIRED
+        ID_Подрасы IDREF #REQUIRED
+        ID_Класса IDREF #REQUIRED>
+        
+    <!ELEMENT Справочник_Характеристик (Название_Характеристики+)>
+    <!ELEMENT Название_Характеристики (#PCDATA)>
+    <!ATTLIST Название_Характеристики
+        ID_Характеристики ID #REQUIRED>
+        
+    <!ELEMENT Характеристики_Персонажей (Характеристика_Персонажа*)>
+    <!ELEMENT Характеристика_Персонажа (Знаечние, Модификатор, Спасбросок, Тренировка)>
+    <!ELEMENT Значение (#PCDATA)>
+    <!ELEMENT Модификатор (#PCDATA)>
+    <!ELEMENT Спасбросок (#PCDATA)>
+    <!ELEMENT Тренировка (#PCDATA)>
+    <!ATTLIST Характеристика_Персонажа
+        ID_Характеристики IDREF #REQUIRED>
+        
+    <!ELEMENT Справочник_Навыков (Название_Навыка*)>
+    <!ELEMENT Название_Навыка (#PCDATA)>
+    <!ATTLIST Название_Навыка
+        ID_Навыка ID #REQUIRED>
+    
+    <!ELEMENT Навыки_Персонажей (Навык_Персонажа*)>
+    <!ELEMENT Навык_Персонажа (Значение, Тренировка)>
+    <!ELEMENT Значение (#PCDATA)>
+    <!ELEMENT Тренировка (#PCDATA)>
+    <!ATTLIST Навык_Персонажа
+        ID_Персонажа IDREF #REQUIRED
+        ID_Навыка IDREF #REQUIRED
+        ID_Характеристики IDREF #REQUIRED>
+        
+    <!ELEMENT Хиты_Персонажей (Хиты_Персонажа*)>
+    <!ELEMENT Хиты_Персонажа (Максимум, Текущие, Временные)>
+    <!ELEMENT Максимум (#PCDATA)>
+    <!ELEMENT Текущие (#PCDATA)>
+    <!ELEMENT Временные (#PCDATA)>
+    <!ATTLIST Хиты_Персонажа
+        ID_Персонажа IDREF #REQUIRED>
+        
+    <!ELEMENT Расы (Раса*)>
+    <!ELEMENT Раса (Название, Описание, Бонус)>
+    <!ELEMENT Название (#PCDATA)>
+    <!ELEMENT Описание (#PCDATA)>
+    <!ELEMENT Бонус (#PCDATA)>
+    <!ATTLIST Раса
+        ID_Расы ID #REQUIRED
+        ID_Харатеристики IDREF #REQUIRED>
+        
+    <!ELEMENT Подрасы (Подраса*)>
+    <!ELEMENT Подраса (Название, Описание, Бонус)>
+    <!ELEMENT Название (#PCDATA)>
+    <!ELEMENT Описание (#PCDATA)>
+    <!ELEMENT Бонус (#PCDATA)>
+    <!ATTLIST Подраса
+        ID_Подрасы ID #REQUIRED
+        ID_Расы IDREF #REQUIRED
+        ID_Характеристики IDREF #REQUIRED>
+    
+    <!ELEMENT Кошельки (Кошелек*)>
+    <!ELEMENT Кошелек (Платинове, Золотые, Серебряные, Медные)>
+    <!ELEMENT Платиновые (#PCDATA)>
+    <!ELEMENT Золотые (#PCDATA)>
+    <!ELEMENT Серебряные (#PCDATA)>
+    <!ELEMENT Медные (#PCDATA)>
+    <!ATTLIST Кошелек
+        ID_Персонажа IDREF #REQUIRED>
+        
+    <!ELEMENT Классы (Класс*)>
+    <!ELEMENT Класс (Название, Описание)>
+    <!ELEMENT Название (#PCDATA)>
+    <!ELEMENT Описание (#PCDATA)>
+    <!ATTLIST Класс
+        ID_Класса ID #REQUIRED>
+        
+    <!ELEMENT Классовые_Навыки (Классовый_Навык*)>
+    <!ELEMENT Классовый_Навык>
+    <!ATTLIST Классовый_Навык
+        ID_Класса IDREF #REQUIRED
+        ID_Навыка IDREF #REQUIRED>
+        
+    <!ELEMENT Классовые_Спасброски (Классовый_Спасбросок*)>
+    <!ELEMENT Классовый_Спасбросок>
+    <!ATTLIST Классовый_Спасбросок
+        ID_Класса IDREF #REQUIRED
+        ID_Характеристики IDREF #REQUIRED>
+    
+    <!ELEMENT Справочник_Предметов (Предмет*)>
+    <!ELEMENT Предмет (Название, Описание)>
+    <!ELEMENT Название (#PCDATA)>
+    <!ELEMENT Описание (#PCDATA)>
+    <!ATTLIST Предмет
+        ID_предмета ID #REQUIRED>
+        
+    <!ELEMENT Инвентари (Инвентарь*)>
+    <!ELEMENT Инвентарь>
+    <!ATTLIST Инвентарь
+        ID_Персонажа IDREF #REQUIRED
+        ID_Предмета IDREF #REQUIRED>
+        
+    <!ELEMENT Бестиарий (Существо*)>
+    <!ELEMENT Существо (Название, Хиты, Опасность, Описание, Опыт)>
+    <!ELEMENT Название (#PCDATA)>
+    <!ELEMENT Хиты (#PCDATA)>
+    <!ELEMENT Опасность (#PCDATA)>
+    <!ELEMENT Описание (#PCDATA)>
+    <!ELEMENT Опыт (#PCDATA)>
+    <!ATTLIST Существо
+        ID_Существа ID #REQUIRED>
+    
+    <!ELEMENT Характеристики_Существ (Характеристика_Существа*)>
+    <!ELEMENT Характеристика_Существа (Значение, Модификатор, Спасбросок)>
+    <!ELEMENT Значение (#PCDATA)>
+    <!ELEMENT Модификатор (#PCDATA)>
+    <!ELEMENT Спасбросок (#PCDATA)>
+    <!ATTLIST Характеристика_Существа
+        ID_Существа IDREF #REQUIRED
+        ID_Характеристики IDREF #REQUIRED>
+        
+    
+    <!ELEMENT Наыки_Существ (Навыки_Существа*)>
+    <!ELEMENT Навыки_Существа (Знаечние)>
+    <!ELEMENT Значение (#PCDATA)>
+    <!ATTLIST Навыки_Существа
+        ID_Существа IDREF #REQUIRED
+        ID_Навыка IDREF #REQUIRED>
+        
+    <!ELEMENT Справочник_Черт (Черта*)>
+    <!ELEMENT Черта (Название, Описание, Бонус)
+    <!ELEMENT Название (#PCDATA)>
+    <!ELEMENT Описание (#PCDATA)>
+    <!ELEMENT Бонус (#PCDATA)>
+    <!ATTLIST Черта
+        ID_Черты ID #REQUIRED
+        ID_Характеристики IDREF #REQUIRED>
+        
+    <!ELEMENT Черты_Персонажей (Черта_Персонажа*)>
+    <!ELEMENT Черта_персонажа>
+    <!ATTLIST Черта_Персонажа
+        ID_Черты IDREF #REQUIRED
+        ID_Персонажа IDREF #REQUIRED>
+    
+    
+    <!ELEMENT Сцены (Сцена*)>
+    <!ELEMENT Сцена (Описание)>
+    <!ELEMENT Описание (#PCDATA)>
+    <!ATTLIST Сцена
+        ID_Сцены ID #REQUIRED>
+        
+    
+    <!ELEMENT Предметы_в_Сценах (Предмет_в_Сцене*)>
+    <!ELEMENT Предмет_в_Сцене>
+    <!ATTLIST Предмет_в_Сцене
+        ID_Сцены IDREF #REQUIRED
+        ID_Предмета IDREF #REQUIRED>
+    
+    <!ELEMENT Персонажи_в_Сценах (Персонаж_в_Сцене*)>
+    <!ELEMENT Персонаж_в_Сцене>
+    <!ATTLIST Персонаж_в_Сцене
+        ID_Сцены IDREF #REQUIRED
+        ID_Персонажа IDREF #REQUIRED>
+        
+    <!ELEMENT Существа_в_Сценах (Существо_в_Сцене*)>
+    <!ELEMENT Существо_в_Сцене>
+    <!ATTLIST Существа_в_Сцене
+        ID_Сцены IDREF #REQUIRED
+        ID_Существа IDREF #REQUIRED>
+    
+    <!ELEMENT Персонажи_Мастера (Персонаж_Мастера*)>
+    <!ELEMENT Персонаж_Мастера>
+    <!ATTLIST Персонаж_Мастера
+        ID_Персонажа IDREF #REQUIRED>
+    ]
