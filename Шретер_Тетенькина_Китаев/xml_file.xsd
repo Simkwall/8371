@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-16"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="body">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="registry">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="timetable">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id_doctor" type="xs:string" />
+                    <xs:element name="day_of_the_week" type="xs:string" />
+                    <xs:element name="start_time" type="xs:string" />
+                    <xs:element name="end_time" type="xs:string" />
+                    <xs:element name="cabinet" type="xs:unsignedByte" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="registration">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="patient_FIO" type="xs:string" />
+                    <xs:element name="date" type="xs:string" />
+                    <xs:element name="time" type="xs:string" />
+                    <xs:element name="id_doctor" type="xs:string" />
+                    <xs:element name="cabinet" type="xs:unsignedByte" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="record_view">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="patient_FIO" type="xs:string" />
+                    <xs:element name="date" type="xs:string" />
+                    <xs:element name="time" type="xs:string" />
+                    <xs:element name="id_doctor" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="talon" />
+              <xs:element name="medical_record">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="patient_FIO" type="xs:string" />
+                    <xs:element name="birth_date" type="xs:string" />
+                    <xs:element name="address" type="xs:string" />
+                    <xs:element name="policy_number" type="xs:unsignedLong" />
+                    <xs:element name="phone_number" type="xs:long" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="doctor">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="appointment">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="diagnosis" type="xs:string" />
+                    <xs:element name="complaints" type="xs:string" />
+                    <xs:element name="prescribed_drugs" />
+                    <xs:element name="procedures">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="type" />
+                          <xs:element name="procedure_date" />
+                          <xs:element name="procedure_time" />
+                          <xs:element name="procedure_cabinet" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="medical_record1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="patient_FIO" type="xs:string" />
+                    <xs:element name="birth_date" type="xs:string" />
+                    <xs:element name="case_history" />
+                    <xs:element name="vaccination_card" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="head_physician">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="data_base">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id_doctor" type="xs:string" />
+                    <xs:element name="recruitment_date" type="xs:string" />
+                    <xs:element name="experience" type="xs:string" />
+                    <xs:element name="cabinet" type="xs:unsignedByte" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="id_doctor1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="doctor_FIO" />
+                    <xs:element name="specialty" />
+                    <xs:element name="doctor_birth_date" />
+                    <xs:element name="doctor_phone_number" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
